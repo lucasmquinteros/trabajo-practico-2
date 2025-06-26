@@ -1,0 +1,55 @@
+@import url("/src/styles/root.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-family-sans-serif);
+  background: var(--color-background);
+  color: var(--color-text);
+  color: #333;
+}
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+.characters-input {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  background-color: var(--color-background);
+}
+.inputName {
+  padding: 5px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: var(--font-size-base);
+  width: 300px;
+}
+.selectFilter {
+  padding: 5px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: var(--font-size-base);
+  width: 150px;
+}
+.searchBtn {
+  padding: 5px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.searchBtn:hover {
+  background-color: var(--color-secondary);
+}
