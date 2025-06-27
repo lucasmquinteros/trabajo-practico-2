@@ -1,13 +1,15 @@
 const API_URL = "https://rickandmortyapi.com/api/character";
-document.getElementById("searchBtn").addEventListener("click", () => {
-  const name = document.getElementById("searchName").value.trim();
-  const status = document.getElementById("statusFilter").value;
-  getCharacters(name, status);
+document.getElementById("searchBtn").addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    const name = document.getElementById("searchName").value.trim();
+  }
+  console.log(e.valueOf())
+  getCharacters(name);
 });
 
-async function getCharacters(name = "", status = "") {
+async function getCharacters(name = "") {
   try {
-    const response = await fetch(`${API_URL}?name=${name}&status=${status}`);
+    const response = await fetch(`${API_URL}?name=${name}`);
     if (!response.ok) {
       throw new Error("No se encontraron personajes.");
     }

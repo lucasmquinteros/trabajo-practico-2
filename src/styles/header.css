@@ -1,0 +1,48 @@
+header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+.inputName{
+    padding: 5px;
+    align-self: center;
+    border: 1px solid var(--color-border);
+    background: var(--color-filter-bg);
+    border-radius: 4px;
+    width: 300px;
+    height: 60%;
+}
+.containerHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.title{}
+.ulHeader{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    list-style: none;
+}
+.liHeader{
+    list-style: none;
+}
+.aHeader{
+    text-decoration: none;
+    color: var(--color-text-primary);
+}
+.aHeader:hover{
+    color: var(--color-accent);
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+

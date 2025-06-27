@@ -10,20 +10,16 @@
       href="public/icons8-rick-sanchez-16.png"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="/src/styles/header.css" />
     <link rel="stylesheet" href="/src/styles/style.css" />
   </head>
   <body>
-    <header></header>
+    <header id="header"></header>
+    <div id="loader"></div>
     <main>
       <h1>Hola mundo</h1>
       <article id="characters-input">
-        <div action="submit" class="formSearch">
-          <input
-            type="text"
-            name="searchName"
-            id="searchName"
-            class="inputName"
-          />
+        <label for="statusFilter">Nombre del personaje</label>
           <select id="statusFilter" class="selectFilter">
             <option value="">Todos</option>
             <option value="alive">Vivo</option>
@@ -33,12 +29,12 @@
           <button id="searchBtn" type="submit" class="searchBtn">
             Buscar Personaje
           </button>
-        </div>
       </article>
       <div id="characters-container"></div>
       <div id="error-container"></div>
     </main>
     <footer></footer>
     <script src="/src/main.js"></script>
+  <script src="src/scripts/header.js"></script>
   </body>
 </html>
