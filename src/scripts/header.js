@@ -22,7 +22,7 @@ function createHeader() {
     const $input = document.createElement('input');
     $input.type = 'text';
     $input.id = 'searchName';
-    $input.placeholder = 'Buscar personaje';
+    $input.placeholder = '🔍  Buscar personaje';
     $input.className = 'inputName';
 
     $container.className = 'containerHeader';

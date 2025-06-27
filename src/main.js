@@ -1,10 +1,15 @@
 const API_URL = "https://rickandmortyapi.com/api/character";
-document.getElementById("searchBtn").addEventListener("keyup", (e) => {
+document.getElementById("searchName").addEventListener("keyup", (e) => {
   if (e.key === "Enter") {
     const name = document.getElementById("searchName").value.trim();
+    try{
+      getCharacters(name).then((characters) => {
+        renderCharacters(characters.results);
+      });
+    }catch (error) {
+      console.log(error)
+    }
   }
-  console.log(e.valueOf())
-  getCharacters(name);
 });
 
 async function getCharacters(name = "") {
@@ -13,9 +18,7 @@ async function getCharacters(name = "") {
     if (!response.ok) {
       throw new Error("No se encontraron personajes.");
     }
-
-    const data = await response.json();
-    renderCharacters(data.results);
+    return await response.json();
   } catch (error) {
     showError(error.message);
   }
@@ -23,6 +26,8 @@ async function getCharacters(name = "") {
 
 function renderCharacters(characters) {
   const container = document.getElementById("characters-container");
+  container.style.display = "grid";
+  container.style.gridTemplateRows = `repeat(${characters.length}, 1fr)`;
   container.innerHTML = "";
 
   characters.forEach((character) => {

@@ -10,27 +10,31 @@ body {
   color: var(--color-text-primary);
 }
 h1 {
-  text-align: center;
+  text-align: start;
   margin-top: 20px;
+  margin-left: 50px;
 }
-.characters-input {
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#characters-container{
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  gap: 100px;
 }
-.formSearch {
+.character{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 20px;
-  background-color: var(--color-background);
-}
-.inputName {
-  padding: 5px;
+  width: 200px;
+  height: 300px;
   border: 1px solid var(--color-border);
-  border-radius: 4px;
-  width: 300px;
+  border-radius: 8px;
+  padding: 10px;
 }
+.character img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
 
