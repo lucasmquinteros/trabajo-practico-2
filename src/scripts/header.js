@@ -42,5 +42,4 @@ const options = Object.freeze({
     Locations: "Locations",
 
 })
-console.log(document.getElementsByClassName("inputName"))
-createHeader()
+export default createHeader;

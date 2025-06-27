@@ -7,7 +7,7 @@
     <title>Trabajo Practico 2</title>
     <link
       rel="shortcut icon"
-      href="public/icons8-rick-sanchez-16.png"
+      href="/icons8-rick-sanchez-16.png"
       type="image/x-icon"
     />
     <link rel="stylesheet" href="/src/styles/header.css" />
@@ -17,24 +17,30 @@
     <header id="header"></header>
     <div id="loader"></div>
     <main>
-      <h1>Hola mundo</h1>
-      <article id="characters-input">
-        <label for="statusFilter">Nombre del personaje</label>
-          <select id="statusFilter" class="selectFilter">
-            <option value="">Todos</option>
-            <option value="alive">Vivo</option>
-            <option value="dead">Muerto</option>
-            <option value="unknown">Desconocido</option>
-          </select>
-          <button id="searchBtn" type="submit" class="searchBtn">
-            Buscar Personaje
-          </button>
-      </article>
-      <div id="characters-container"></div>
-      <div id="error-container"></div>
+        <section id="main-section" class="main-section">
+        <article class="characters-filter">
+          <h2>Characters</h2>
+          <div id="filter-container">
+            <select id="statusFilter" class="selectFilter">
+                <option value="">Status</option>
+                <option value="alive">Vivo</option>
+                <option value="dead">Muerto</option>
+                <option value="unknown">Desconocido</option>
+            </select>
+            <select id="speciesFilter" class="selectFilter">
+              <option value="">Species</option>
+              <option value="alive">Human</option>
+              <option value="dead">Muerto</option>
+              <option value="unknown">Desconocido</option>
+            </select>
+          </div>
+
+        </article>
+        <div id="characters-container"></div>
+        <div id="error-container"></div>
+      </section>
     </main>
     <footer></footer>
-    <script src="src/scripts/header.js"></script>
-    <script src="/src/main.js"></script>
+    <script src="/src/main.js" type="module"></script>
   </body>
 </html>

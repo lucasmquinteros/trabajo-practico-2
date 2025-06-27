@@ -59,3 +59,12 @@ select:focus {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+a{
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+a:hover{
+  color: var(--color-accent);
+  transition: 0.3s;
+  cursor: pointer;
+}
