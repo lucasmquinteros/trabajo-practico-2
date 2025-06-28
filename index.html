@@ -2,12 +2,11 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trabajo Practico 2</title>
     <link
       rel="shortcut icon"
-      href="/icons8-rick-sanchez-16.png"
+      href="/icons8-rick-sanchez.svg"
       type="image/x-icon"
     />
     <link rel="stylesheet" href="/src/styles/header.css" />
@@ -29,15 +28,17 @@
             </select>
             <select id="speciesFilter" class="selectFilter">
               <option value="">Species</option>
-              <option value="alive">Human</option>
-              <option value="dead">Muerto</option>
-              <option value="unknown">Desconocido</option>
             </select>
+              <button id="clearAll" class="clearAllBtn">Clear all</button>
           </div>
 
         </article>
-        <div id="characters-container"></div>
-        <div id="error-container"></div>
+            <article class="characters-list" id="characters-list">
+                <div id="characters-container"></div>
+                <div id="error-container"></div>
+                <a id="nextPage" style="display: none;" class="nextPage">Cargar más</a>
+
+            </article>
       </section>
     </main>
     <footer></footer>
