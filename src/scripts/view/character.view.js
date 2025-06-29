@@ -1,8 +1,6 @@
 export const renderCharacters = (characters, reset = true) => {
     const container = document.getElementById("characters-container");
     if (reset) container.innerHTML = "";
-    container.style.display = "grid";
-    container.style.gridTemplateRows = `repeat(${Math.ceil(characters.length / 4)}, 1fr)`;
 
     if (characters.length === 0) {
         container.innerHTML = `<p class="no-results">No characters found</p>`;

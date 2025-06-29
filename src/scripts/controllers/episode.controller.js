@@ -1,10 +1,11 @@
-import * as episodeModel from "../models/episode.model.js";
-import {renderEpisode, renderEpisodes} from "../view/episodes.view.js";
 import createHeader from "../view/header.js";
-
-export const makeEpisode = () => document.addEventListener("DOMContentLoaded", async () => {
+import * as episodeModel from "../models/episode.model.js";
+import {renderEpisode} from "../view/episodes.view.js";
+import "../../styles/episode.css"
+export const makeEpisode = async () => {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
+
 
     if (!id) {
         window.history.back();
@@ -13,10 +14,5 @@ export const makeEpisode = () => document.addEventListener("DOMContentLoaded", a
     createHeader();
     const episode = await episodeModel.getEpisodeById(id);
     renderEpisode(episode);
-});
-
-export const makeEpisodes = () => document.addEventListener("DOMContentLoaded", async () => {
-    createHeader()
-    const episodes = await episodeModel.getAllEpisodes()
-    renderEpisodes(episodes);
-})
+};
+makeEpisode().then(r => {})

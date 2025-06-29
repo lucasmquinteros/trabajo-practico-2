@@ -1,6 +1,5 @@
-import * as controller from "./scripts/controllers/episode.controller.js";
-
+import * as controller from "./scripts/controllers/episodes.controller.js";
+import "./styles/episodes.css"
 controller.makeEpisodes()
 
-document.getElementById("aNameEpisode").addEventListener("click", controller.makeEpisodes)
 

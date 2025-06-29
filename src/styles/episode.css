@@ -1,0 +1,110 @@
+.main-section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 48px;
+    max-width: 1000px;
+    margin: 0 30px;
+}
+
+.episode-title h1 {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.episode-title p {
+    font-size: 16px;
+    margin: 0;
+    color: var(--color-text-secondary);
+}
+
+.episode-information h3 {
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+.episode-information {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.information {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+.first-line{
+    border-bottom: 1px solid var(--color-border);
+
+}
+.first-line, #last-line {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid var(--color-border);
+    padding: 20px 0 20px 0;
+}
+
+.first-line h4, #last-line h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.first-line p, #last-line p, #episode-code {
+    font-size: 16px;
+    margin: 0;
+}
+#episode-code-h4{
+    margin: 0;
+}
+#episode-code {
+    padding-left: 4px;
+}
+
+#character-episode h3 {
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+.characters-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+
+@media (max-width: 768px) {
+    .main-section {
+        padding: 24px 16px;
+    }
+
+    .information {
+        flex-direction: column;
+    }
+
+    .first-line, #last-line {
+        flex: 1 1 100%;
+    }
+
+    .episode-title h1 {
+        font-size: 32px;
+    }
+
+    .episode-information h3,
+    #character-episode h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .episode-title h1 {
+        font-size: 26px;
+    }
+
+    .characters-list {
+        justify-content: center;
+    }
+}

@@ -1,3 +1,4 @@
+import "../../styles/header.css"
 function createHeader() {
 
     const $headerIndex = document.getElementById('header');
@@ -8,7 +9,9 @@ function createHeader() {
     const $ulHeader = document.createElement('ul');
     for (const navElement of Object.values(options)) {
         const $liHeader = document.createElement('li');
-        $liHeader.appendChild(document.createElement('a'));
+        const $aHeader = document.createElement('a');
+        $aHeader.href = `/src/pages/${navElement.toLowerCase()}`;
+        $liHeader.appendChild($aHeader);
         $liHeader.firstElementChild.href = `/src/pages/${navElement.toLowerCase()}`;
         $liHeader.firstElementChild.innerText = navElement;
         $liHeader.firstElementChild.className = 'aHeader';

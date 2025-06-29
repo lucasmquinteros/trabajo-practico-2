@@ -23,7 +23,6 @@ export const applyFilter = async () => {
         state.utils.showLoader();
         state.currentPage = 1;
 
-        // Usar carga paralela solo cuando hay filtro de especie
         if (state.filters.species) {
             const allCharacters = await model.fetchAllBySpeciesFaster(state.filters.species, state.filters.name, state.filters.status);
 
@@ -33,11 +32,10 @@ export const applyFilter = async () => {
                 return;
             }
 
-            state.totalPages = 1; // Ya tenemos todos los resultados
+            state.totalPages = 1;
             view.renderCharacters(allCharacters, true);
             state.utils.toggleLoadMoreButton();
         } else {
-            // Filtro normal (sin especie)
             const characters = await model.getCharacters(state.filters, state.currentPage);
 
             if (!characters || !characters.results) {
