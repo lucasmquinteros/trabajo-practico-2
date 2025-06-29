@@ -1,9 +1,6 @@
 import state from "../store/state.js"
 const API_URL = state.API_URL;
-export const getEpisode = async (id) => {
-    const response = await fetch(`${API_URL}/episode/${id}`);
-    return response.json();
-}
+
 
 export const getCharacters = async (filters = {}, page = 1) => {
     const params = new URLSearchParams({ ...filters, page: toString() });
@@ -17,6 +14,14 @@ export const getCharacters = async (filters = {}, page = 1) => {
     return response.json();
 };
 
+
+
+
+
+
+
+
+
 export const getAllCharacters = async () => {
     state.currentPage = 1;
     const characters = await getCharacters();
@@ -25,6 +30,10 @@ export const getAllCharacters = async () => {
         return characters.results;
     }
 };
+
+
+
+
 
 
 export const fetchAllBySpeciesFaster = async (species, name = "", status = "") => {
