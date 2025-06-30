@@ -29,4 +29,14 @@ export async function getAllEpisodes() {
 
     return allEpisodes;
 }
-
+export async function getCharactersInEpisode(ids){
+    const characters = [];
+    for (const character of ids) {
+        const response = await fetch(character).then(res => res.json()).catch((err) => {
+            console.error(err)
+            return null;
+        })
+        characters.push(response);
+    }
+    return characters;
+}

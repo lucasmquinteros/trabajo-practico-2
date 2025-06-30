@@ -20,19 +20,20 @@
 
 .episode-information h3 {
     font-size: 22px;
-    margin-bottom: 16px;
+    margin-top:20px;
 }
 
 .episode-information {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 100%;
 }
 
 .information {
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 15px;
 }
 .first-line{
     border-bottom: 1px solid var(--color-border);
@@ -48,13 +49,12 @@
 }
 
 .first-line h4, #last-line h4 {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 20px;
     margin: 0;
 }
 
 .first-line p, #last-line p, #episode-code {
-    font-size: 16px;
+    font-size: 20px;
     margin: 0;
 }
 #episode-code-h4{
@@ -62,6 +62,7 @@
 }
 #episode-code {
     padding-left: 4px;
+    margin-bottom: 10px;
 }
 
 #character-episode h3 {

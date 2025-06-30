@@ -1,4 +1,4 @@
-export const renderCharacters = (characters, reset = true) => {
+export const charenderCharacters = (characters, reset = true) => {
     const container = document.getElementById("characters-container");
     if (reset) container.innerHTML = "";
 

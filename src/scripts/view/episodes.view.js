@@ -1,4 +1,4 @@
-import {renderCharacters} from "./character.view.js";
+
 export const renderEpisodes = (episodes, reset=true) => {
     const container = document.getElementById("episodes-list");
     if(reset) container.innerHTML = "";
