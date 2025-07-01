@@ -9,7 +9,7 @@ export const renderEpisodes = (episodes, reset=true) => {
 const createCardEpisode = (ep) => {
     const card = document.createElement("div");
     card.className = "episode";
-    card.innerHTML = `<h2><a id="aNameEpisode" href="episode.html?id=${ep.id}">${ep.name}</a></h2>
+    card.innerHTML = `<h2><a id="aNameEpisode" href="/src/pages/episode.html?id=${ep.id}">${ep.name}</a></h2>
   <p><strong>Number:</strong> ${ep.episode}</p>
   <p><strong>Date:</strong> ${ep.air_date}</p>
 `

@@ -17,7 +17,7 @@ export const createCharacterCard = (character) => {
     card.className = "character";
     card.innerHTML = `
     <img src="${character.image}" alt="${character.name}">
-    <h3><a href="character.html?id=${character.id}">${character.name}</a></h3>
+    <h3><a href="/src/pages/character.html?id=${character.id}">${character.name}</a></h3>
     <p>${character.status} - ${character.species}</p>
   `;
     return card;

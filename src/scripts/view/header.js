@@ -10,7 +10,7 @@ function createHeader() {
     for (const navElement of Object.values(options)) {
         const $liHeader = document.createElement('li');
         const $aHeader = document.createElement('a');
-        $aHeader.href = `/src/pages/${navElement.toLowerCase()}`;
+        $aHeader.href = `/src/pages/${navElement.toLowerCase()}.html`;
         $liHeader.appendChild($aHeader);
         $liHeader.firstElementChild.href = `/src/pages/${navElement.toLowerCase()}`;
         $liHeader.firstElementChild.innerText = navElement;
