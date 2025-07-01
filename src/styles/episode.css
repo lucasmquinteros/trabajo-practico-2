@@ -67,8 +67,49 @@
 
 #character-episode h3 {
     font-size: 22px;
-    margin-bottom: 16px;
+    margin: 0;
 }
+#characters-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-self: center;
+    align-self: flex-start;
+    align-items: start;
+    justify-content: space-around;
+    width: 100%;
+    gap: 10px;
+}
+.character{
+    justify-self: center;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+    width: 200px;
+    height: 300px;
+    border-radius: 8px;
+    padding: 10px;
+}
+.character h3{
+    justify-self: center;
+}
+.character p{
+    color: var(--color-text-secondary);
+
+}
+.character img{
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+
+
+
+
 
 .characters-list {
     display: flex;

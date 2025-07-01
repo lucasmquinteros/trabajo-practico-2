@@ -1,5 +1,5 @@
 import state from "../store/state.js";
-import * as controller from "./character.controller.js"
+import * as controller from "./characters.controller.js"
 import * as view from "../view/character.view.js"
 import * as model from "../models/api.model.js";
 
@@ -54,9 +54,11 @@ const loadMoreCharacters = async () => {
         state.utils.showLoader();
 
         state.currentPage++;
+        console.log(state.currentPage);
         const characters = await model.getCharacters(state.filters, state.currentPage);
 
         if (characters?.results) {
+            console.log(characters);
             view.renderCharacters(characters.results, false);
             state.utils.toggleLoadMoreButton();
         }

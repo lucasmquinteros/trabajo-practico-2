@@ -3,9 +3,9 @@ const API_URL = state.API_URL;
 
 
 export const getCharacters = async (filters = {}, page = 1) => {
-    const params = new URLSearchParams({ ...filters, page: toString() });
+    const params = new URLSearchParams({ ...filters, page: page.toString() });
     const response = await fetch(`${API_URL}/character?${params.toString()}`);
-
+    console.log(`${API_URL}/character?${params.toString()}`)
     if (!response.ok) {
         const error = await response.json();
         throw new Error(error.error || "Error fetching characters");
@@ -14,24 +14,19 @@ export const getCharacters = async (filters = {}, page = 1) => {
     return response.json();
 };
 
-
-
-
-
-
-
-
-
-export const getAllCharacters = async () => {
-    state.currentPage = 1;
-    const characters = await getCharacters();
-    if (characters?.results) {
-        state.totalPages = characters.info.pages;
-        return characters.results;
+export const getCharacterById = async (id) => {
+    const response = await fetch(`${API_URL}/character/${id}`);
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || "Error fetching characters");
     }
+    return response.json();
+}
+
+export const getEpisodesInCharacter = async (episodes) => {
+    const requests = episodes.map(url => fetch(url).then(res => res.json()));
+    return await Promise.all(requests);
 };
-
-
 
 
 
