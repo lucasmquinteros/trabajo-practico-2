@@ -1,4 +1,4 @@
-import * as model from "../models/api.model.js";
+import * as model from "../models/character.model.js";
 import * as view from "../view/character.view.js";
 import state from "../store/state.js";
 

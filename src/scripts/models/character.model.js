@@ -34,13 +34,11 @@ export const getEpisodesInCharacter = async (episodes) => {
 export const fetchAllBySpeciesFaster = async (species, name = "", status = "") => {
     try {
         state.utils.showLoader(`Buscando ${species}...`)
-        // Construir parámetros base
         const params = new URLSearchParams();
         if (species) params.append("species", species);
         if (name) params.append("name", name);
         if (status) params.append("status", status);
 
-        // Primera petición para obtener metadatos
         const firstPageUrl = `${API_URL}/character/?${params.toString()}`;
         const firstResponse = await fetch(firstPageUrl);
 
@@ -55,7 +53,6 @@ export const fetchAllBySpeciesFaster = async (species, name = "", status = "") =
         const totalPages = firstData.info.pages;
         if (totalPages <= 1) return firstData.results;
 
-        // Crear promesas para las páginas restantes
         const pagePromises = [];
         for (let page = 2; page <= totalPages; page++) {
             params.set("page", page);
@@ -63,10 +60,10 @@ export const fetchAllBySpeciesFaster = async (species, name = "", status = "") =
             pagePromises.push(fetch(pageUrl).then(res => res.json()));
         }
 
-        // Resolver todas las páginas en paralelo
+
         const pagesData = await Promise.all(pagePromises);
 
-        // Combinar resultados
+
         return pagesData.reduce((acc, data) => {
             return [...acc, ...(data.results || [])];
         }, firstData.results);

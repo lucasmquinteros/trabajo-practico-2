@@ -1,6 +1,6 @@
 import createHeader from "../view/header.js";
 import {renderCharacterDetail} from "../view/character.view.js";
-import {getCharacterById, getEpisodesInCharacter} from "../models/api.model.js";
+import {getCharacterById, getEpisodesInCharacter} from "../models/character.model.js";
 import {renderEpisodes} from "../view/episodes.view.js";
 import "../../styles/episodes.css"
 import "../../styles/character.css"

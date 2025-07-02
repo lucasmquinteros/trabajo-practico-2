@@ -13,6 +13,8 @@
     justify-content:  start;
     width: 100%;
     margin-left: 50px;
+    margin-top: 30px;
+    gap: 10px;
 }
 .details h1{
     font-size: 40px;

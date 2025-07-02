@@ -1,6 +1,5 @@
 import "../../styles/header.css"
 function createHeader() {
-
     const $headerIndex = document.getElementById('header');
     const $navbar = document.createElement('nav');
     $navbar.className = 'navbar';
