@@ -92,3 +92,5 @@ La aplicación sigue un patrón de arquitectura MVC (Modelo-Vista-Controlador):
 ├── vercel.json
 └── vite.config.js
 ```
+##Detalles
+Me hubiese gustado agregar funcionalidades locales, es decir al hacer el fetch a todos los personajes/episodios/localizaciones guardarlos en state y luego manipular la informacion desde state. O quizas poder filtrar dentro de un personaje, o episodio que los inputs funcionen allí.

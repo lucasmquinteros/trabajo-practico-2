@@ -32,9 +32,9 @@ export const setupFilterListeners = () => {
   }
 };
 function clearAllFilters() {
-  state.name = "";
-  state.species = "";
-  state.status = "";
+  state.filters.name = "";
+  state.filters.species = "";
+  state.filters.status = "";
   controller.applyFilter().catch(console.error);
 }
 const loadMoreCharacters = async () => {

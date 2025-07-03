@@ -31,7 +31,6 @@ function createHeader() {
   const $input = document.createElement("input");
   $input.type = "text";
   $input.id = "searchName";
-  $input.placeholder = "🔍  Buscar personaje";
   $input.className = "inputName";
 
   $container.className = "containerHeader";
@@ -78,43 +77,37 @@ export default createHeader;
 
 const eventListeners = () => {
   const input = document.getElementById("searchName");
-  if (
-    window.location.pathname.split("/")[1] === "characters" ||
-    window.location.pathname.split("/")[1] === ""
-  ) {
-    document
-      .getElementById("searchName")
-      .addEventListener("keyup", async (e) => {
-        if (e.key === "Enter") {
-          state.filters.name = input.value.trim();
-          await controller.applyFilter();
-        }
-      });
-  }
-  if (window.location.pathname.split("/")[1] === "episodes") {
-    document
-      .getElementById("searchName")
-      .addEventListener("keyup", async (e) => {
-        if (e.key === "Enter") {
-          const searchValue = input.value.trim();
-          const filteredEpisodes = state.episodes.filter((episode) =>
-            episode.name.toLowerCase().includes(searchValue.toLowerCase())
-          );
-          viewEpisodes.renderEpisodes(filteredEpisodes);
-        }
-      });
-  }
-  if (window.location.pathname.split("/")[1] === "locations") {
-    document
-      .getElementById("searchName")
-      .addEventListener("keyup", async (e) => {
-        if (e.key === "Enter") {
-          const searchValue = input.value.trim();
-          const filteredLocations = state.locations.filter((location) =>
-            location.name.toLowerCase().includes(searchValue.toLowerCase())
-          );
-          viewLocation.renderLocations(filteredLocations);
-        }
-      });
+  const path = window.location.pathname.split("/")[1];
+
+  if (path === "characters" || path === "") {
+    input.placeholder = "🔍  Buscar personaje";
+    input.addEventListener("keyup", async (e) => {
+      if (e.key === "Enter") {
+        state.filters.name = input.value.trim();
+        await controller.applyFilter();
+      }
+    });
+  } else if (path === "episodes") {
+    input.placeholder = "🔍  Buscar episodio";
+    input.addEventListener("keyup", async (e) => {
+      if (e.key === "Enter") {
+        const searchValue = input.value.trim();
+        const filteredEpisodes = state.episodes.filter((episode) =>
+          episode.name.toLowerCase().includes(searchValue.toLowerCase())
+        );
+        viewEpisodes.renderEpisodes(filteredEpisodes);
+      }
+    });
+  } else if (path === "locations" || path === "location") {
+    input.placeholder = "🔍  Buscar ubicación";
+    input.addEventListener("keyup", async (e) => {
+      if (e.key === "Enter") {
+        const searchValue = input.value.trim();
+        const filteredLocations = state.locations.filter((location) =>
+          location.name.toLowerCase().includes(searchValue.toLowerCase())
+        );
+        viewLocation.renderLocations(filteredLocations);
+      }
+    });
   }
 };

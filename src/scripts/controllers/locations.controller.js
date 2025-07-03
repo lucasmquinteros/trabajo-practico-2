@@ -16,4 +16,4 @@ createHeader();
 const locations = await getLocations();
 state.locations = locations;
 // Renderiza las ubicaciones en la interfaz
-renderLocations(locations);
+renderLocations(state.locations);
