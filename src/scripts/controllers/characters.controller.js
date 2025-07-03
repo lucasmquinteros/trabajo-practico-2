@@ -55,38 +55,3 @@ export const applyFilter = async () => {
         state.utils.hideLoader();
     }
 };
-
-
-
-
-
-
-export const handleFilter = async () => {
-    try {
-        state.utils.showLoader();
-        state.currentPage = 1;
-
-        const filters = {
-            name: state.filters.name,
-            status: state.filters.status
-        };
-
-        const data = await model.getCharacters(filters);
-
-        // Aplicar filtro de especie localmente si existe
-        let results = data.results;
-        if (state.filters.species) {
-            results = results.filter(char =>
-                char.species.toLowerCase() === state.filters.species.toLowerCase()
-            );
-        }
-
-        view.renderCharacters(results, true);
-        state.totalPages = data.info.pages;
-        state.utils.toggleLoadMoreButton();
-    } catch (error) {
-        state.utils.showError(error.message);
-    } finally {
-        state.utils.hideLoader();
-    }
-};

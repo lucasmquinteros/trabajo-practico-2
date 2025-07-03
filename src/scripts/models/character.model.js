@@ -5,7 +5,6 @@ const API_URL = state.API_URL;
 export const getCharacters = async (filters = {}, page = 1) => {
     const params = new URLSearchParams({ ...filters, page: page.toString() });
     const response = await fetch(`${API_URL}/character?${params.toString()}`);
-    console.log(`${API_URL}/character?${params.toString()}`)
     if (!response.ok) {
         const error = await response.json();
         throw new Error(error.error || "Error fetching characters");

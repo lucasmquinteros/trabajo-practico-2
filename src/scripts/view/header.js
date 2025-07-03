@@ -16,7 +16,10 @@ function createHeader() {
         $liHeader.firstElementChild.className = 'aHeader';
         $ulHeader.appendChild($liHeader);
     }
-    $title.innerText = 'Api & Morty';
+    const $a = document.createElement('a');
+    $a.href = '/src/pages/index.html';
+    $a.innerText = 'Api & Morty';
+    $title.appendChild($a);
     $title.className = 'title';
     $ulHeader.className = 'ulHeader';
     $ulHeader.id = 'ulHeader';
@@ -37,6 +40,33 @@ function createHeader() {
 
     $headerIndex.appendChild($navbar)
     $headerIndex.appendChild($input)
+
+
+    const $burger = document.createElement('button');
+    $burger.innerHTML = '☰';
+    $burger.className = 'burger';
+    $burger.setAttribute('aria-label', 'Menu');
+    $navbar.appendChild($container);
+    $navbar.appendChild($ulHeader);
+
+    $burger.addEventListener('click', () => {
+        $ulHeader.classList.toggle('ulHeader--open');
+    });
+    $container.appendChild($burger);
+    document.addEventListener('click', (e) => {
+        const isClickInside = $navbar.contains(e.target);
+        if (!isClickInside) {
+            $ulHeader.classList.remove('ulHeader--open');
+        }
+    });
+
+    $ulHeader.querySelectorAll('a').forEach($a => {
+        $a.addEventListener('click', () => {
+            $ulHeader.classList.remove('ulHeader--open');
+        });
+    });
+
+
 }
 const options = Object.freeze({
     Characters: "Characters",
@@ -45,3 +75,4 @@ const options = Object.freeze({
 
 })
 export default createHeader;
+

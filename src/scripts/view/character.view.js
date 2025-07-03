@@ -29,6 +29,9 @@ export const renderCharacterDetail = (character) => {
     document.getElementById("image").innerHTML = `<img src="${character.image}" alt="${character.name}" class="image">`
     document.getElementById("name-character").textContent = character.name;
     document.getElementById("About").textContent = `Status: ${character.status} | Specie: ${character.species} | Type: ${character.type ? character.type : 'Unknown'} | Gender: ${character.gender}`;
-    document.getElementById("Origin").textContent = `Origin: ${character.origin.name} | Location: ${character.location.name}`;
+    document.getElementById("Origin").innerHTML = `Origin: ${character.origin.name} | Location: <a href=/src/pages/location.html?id=${getLocationId()}>${character.location.name}</a>`;
+    function getLocationId(){
+        return character.location.url.split("/")[5]
+    }
 };
 
