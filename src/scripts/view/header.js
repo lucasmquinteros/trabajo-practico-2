@@ -80,7 +80,7 @@ const eventListeners = () => {
   const path = window.location.pathname.split("/")[1];
 
   if (path === "characters" || path === "") {
-    input.placeholder = "🔍  Buscar personaje";
+    input.placeholder = "🔍  Search Character";
     input.addEventListener("keyup", async (e) => {
       if (e.key === "Enter") {
         state.filters.name = input.value.trim();
@@ -88,7 +88,7 @@ const eventListeners = () => {
       }
     });
   } else if (path === "episodes") {
-    input.placeholder = "🔍  Buscar episodio";
+    input.placeholder = "🔍  Search episode";
     input.addEventListener("keyup", async (e) => {
       if (e.key === "Enter") {
         const searchValue = input.value.trim();
@@ -99,7 +99,7 @@ const eventListeners = () => {
       }
     });
   } else if (path === "locations" || path === "location") {
-    input.placeholder = "🔍  Buscar ubicación";
+    input.placeholder = "🔍  Search location";
     input.addEventListener("keyup", async (e) => {
       if (e.key === "Enter") {
         const searchValue = input.value.trim();
