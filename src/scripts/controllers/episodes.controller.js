@@ -1,5 +1,6 @@
 import * as episodeModel from "../models/episode.model.js";
-import {renderEpisodes} from "../view/episodes.view.js";
+import state from "../store/state.js";
+import { renderEpisodes } from "../view/episodes.view.js";
 import createHeader from "../view/header.js";
 
 /**
@@ -12,8 +13,10 @@ import createHeader from "../view/header.js";
  * Configura el evento DOMContentLoaded para cargar los episodios cuando la página esté lista
  * @returns {void}
  */
-export const makeEpisodes = () => document.addEventListener("DOMContentLoaded", async () => {
-    createHeader()
-    const episodes = await episodeModel.getAllEpisodes()
-    renderEpisodes(episodes);
-})
+export const makeEpisodes = () =>
+  document.addEventListener("DOMContentLoaded", async () => {
+    createHeader();
+    const episodes = await episodeModel.getAllEpisodes();
+    state.episodes = episodes;
+    renderEpisodes(state.episodes);
+  });
