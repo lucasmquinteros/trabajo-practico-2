@@ -1,14 +1,14 @@
 {
   "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/characters", "destination": "/index.html" },
     { "source": "/character", "destination": "/src/pages/character.html" },
-    { "source": "/episode", "destination": "/src/pages/episode.html" },
     { "source": "/episodes", "destination": "/src/pages/episodes.html" },
-    { "source": "/location", "destination": "/src/pages/location.html" },
-    { "source": "/locations", "destination": "/src/pages/locations.html" }
-  ],
-  "routes": [
-    { "handle": "filesystem" }
+    { "source": "/episode", "destination": "/src/pages/episode.html" },
+    { "source": "/locations", "destination": "/src/pages/locations.html" },
+    { "source": "/location", "destination": "/src/pages/location.html" }
   ],
   "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "framework": "vite"
 }
