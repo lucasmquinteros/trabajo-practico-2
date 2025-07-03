@@ -1,10 +1,14 @@
 {
   "rewrites": [
-    { "source": "/character.html", "destination": "/src/pages/character.html" },
-    { "source": "/characters.html", "destination": "/src/pages/characters.html" },
-    { "source": "/episode.html", "destination": "/src/pages/episode.html" },
-    { "source": "/episodes.html", "destination": "/src/pages/episodes.html" },
-    { "source": "/location.html", "destination": "/src/pages/location.html" },
-    { "source": "/locations.html", "destination": "/src/pages/locations.html" }
-  ]
+    { "source": "/character", "destination": "/src/pages/character.html" },
+    { "source": "/episode", "destination": "/src/pages/episode.html" },
+    { "source": "/episodes", "destination": "/src/pages/episodes.html" },
+    { "source": "/location", "destination": "/src/pages/location.html" },
+    { "source": "/locations", "destination": "/src/pages/locations.html" }
+  ],
+  "routes": [
+    { "handle": "filesystem" }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
 }

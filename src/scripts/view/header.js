@@ -9,15 +9,14 @@ function createHeader() {
     for (const navElement of Object.values(options)) {
         const $liHeader = document.createElement('li');
         const $aHeader = document.createElement('a');
-        $aHeader.href = `/src/pages/${navElement.toLowerCase()}.html`;
+        $aHeader.href = `/${navElement.toLowerCase()}`;
         $liHeader.appendChild($aHeader);
-        $liHeader.firstElementChild.href = `/src/pages/${navElement.toLowerCase()}`;
         $liHeader.firstElementChild.innerText = navElement;
         $liHeader.firstElementChild.className = 'aHeader';
         $ulHeader.appendChild($liHeader);
     }
     const $a = document.createElement('a');
-    $a.href = '/src/pages/index.html';
+    $a.href = '/';
     $a.innerText = 'Api & Morty';
     $title.appendChild($a);
     $title.className = 'title';

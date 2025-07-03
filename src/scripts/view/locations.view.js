@@ -3,7 +3,7 @@ export const renderLocations = (locations) => {
     locations.forEach(location => {
     const containerLocation = document.createElement("div");
     containerLocation.className = "location";
-    containerLocation.innerHTML = `<div  data-label="Name"><a href="/src/pages/location.html?id=${location.id}">${location.name}</a></div>
+    containerLocation.innerHTML = `<div  data-label="Name"><a href="/location?id=${location.id}">${location.name}</a></div>
                     <div  data-label="Name">${location.type}</div>
                     <div  data-label="Name">${location.dimension ? location.dimension : "unknown"}</div>`
         container.appendChild(containerLocation);
