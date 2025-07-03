@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/character.html", "destination": "/src/pages/character.html" },
+    { "source": "/characters.html", "destination": "/src/pages/characters.html" },
+    { "source": "/episode.html", "destination": "/src/pages/episode.html" },
+    { "source": "/episodes.html", "destination": "/src/pages/episodes.html" },
+    { "source": "/location.html", "destination": "/src/pages/location.html" },
+    { "source": "/locations.html", "destination": "/src/pages/locations.html" }
+  ]
+}
