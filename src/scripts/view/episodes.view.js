@@ -1,4 +1,13 @@
 
+/**
+ * Módulo que contiene las funciones para renderizar episodios en la interfaz
+ */
+
+/**
+ * Renderiza una lista de episodios en el contenedor correspondiente
+ * @param {Array} episodes - Lista de episodios a renderizar
+ * @param {boolean} reset - Si es true, limpia el contenedor antes de renderizar
+ */
 export const renderEpisodes = (episodes, reset=true) => {
     const container = document.getElementById("episodes-list");
     if(reset) container.innerHTML = "";
@@ -6,6 +15,11 @@ export const renderEpisodes = (episodes, reset=true) => {
         container.appendChild(createCardEpisode(episode))
     }
 };
+/**
+ * Crea un elemento de tarjeta para un episodio
+ * @param {Object} ep - Datos del episodio
+ * @returns {HTMLElement} - Elemento DOM que representa la tarjeta del episodio
+ */
 const createCardEpisode = (ep) => {
     const card = document.createElement("div");
     card.className = "episode";
@@ -15,6 +29,10 @@ const createCardEpisode = (ep) => {
 `
     return card;
 }
+/**
+ * Renderiza los detalles de un episodio específico en la página de detalle
+ * @param {Object} episode - Datos del episodio a renderizar
+ */
 export const renderEpisode = (episode) => {
     const $article1 = document.createElement('article');
     document.getElementById("main-section")

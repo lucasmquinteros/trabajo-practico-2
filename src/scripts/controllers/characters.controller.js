@@ -2,6 +2,16 @@ import * as model from "../models/character.model.js";
 import * as view from "../view/character.view.js";
 import state from "../store/state.js";
 
+/**
+ * Módulo controlador para la gestión de personajes.
+ * Maneja la lógica de negocio entre los modelos y las vistas.
+ */
+
+/**
+ * Inicializa la página de personajes cargando los datos iniciales
+ * y renderizando los personajes en la interfaz.
+ * @returns {Promise<void>}
+ */
 export const initCharacters = async () => {
     try {
         state.utils.showLoader();
@@ -18,6 +28,11 @@ export const initCharacters = async () => {
         state.utils.hideLoader();
     }
 };
+/**
+ * Aplica los filtros seleccionados por el usuario y actualiza la lista de personajes.
+ * Utiliza diferentes estrategias de búsqueda dependiendo de los filtros aplicados.
+ * @returns {Promise<void>}
+ */
 export const applyFilter = async () => {
     try {
         state.utils.showLoader();

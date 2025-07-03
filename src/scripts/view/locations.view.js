@@ -1,3 +1,11 @@
+/**
+ * Módulo que contiene las funciones para renderizar ubicaciones en la interfaz
+ */
+
+/**
+ * Renderiza una lista de ubicaciones en el contenedor correspondiente
+ * @param {Array} locations - Lista de ubicaciones a renderizar
+ */
 export const renderLocations = (locations) => {
     const container = document.getElementById("locations-container");
     locations.forEach(location => {
@@ -10,6 +18,10 @@ export const renderLocations = (locations) => {
     })
 }
 
+/**
+ * Renderiza los detalles de una ubicación específica en la página de detalle
+ * @param {Object} location - Datos de la ubicación a renderizar
+ */
 export const renderLocation = (location) => {
     document.getElementById("title").textContent = location.name;
     document.getElementById("description").textContent = `Type: ${location.type} | Dimension: ${location.dimension ? location.dimension : "unknown"}`;

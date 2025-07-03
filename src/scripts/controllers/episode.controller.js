@@ -1,8 +1,18 @@
+/**
+ * Controlador para la página de detalle de episodio
+ * Se encarga de obtener los datos del episodio y sus personajes, y pasarlos a la vista
+ */
+
 import createHeader from "../view/header.js";
 import * as episodeModel from "../models/episode.model.js";
 import {renderEpisode} from "../view/episodes.view.js";
 import "../../styles/episode.css"
 import {renderCharacters} from "../view/character.view.js";
+/**
+ * Inicializa la página de detalle de episodio
+ * Obtiene el ID del episodio de la URL, carga sus datos y los personajes que aparecen en él
+ * @returns {Promise<void>}
+ */
 const makeEpisode = async () => {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
