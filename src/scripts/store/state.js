@@ -33,7 +33,6 @@ const state = {
     showLoader: (message = "") => {
       // Incrementar el contador de peticiones activas
       state.activeRequests++;
-      console.log("🔁 Loader inicializado: elemento", document.getElementById("loader"));
       const loader = document.getElementById("loader");
       if (loader) {
         // Asegurarse de que el loader tenga el estilo display:flex para centrar su contenido

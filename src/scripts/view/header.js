@@ -97,22 +97,20 @@ const eventListeners = () => {
           location.name.toLowerCase().includes(searchValue.toLowerCase())
       );
       viewLocation.renderLocations(filteredLocations);
+      console.log(filteredLocations);
     }
   };
 
-  // Detecta "Enter" en teclado físico
   input.addEventListener("keydown", async (e) => {
     if (e.key === "Enter") {
       await handleSearch();
     }
   });
 
-  // Detecta cambios o confirmaciones en móvil (teclado virtual)
   input.addEventListener("change", async () => {
     await handleSearch();
   });
 
-  // Placeholder dinámico
   if (path === "characters" || path === "") {
     input.placeholder = "🔍  Search Character";
   } else if (path === "episodes" || path === "episode") {
