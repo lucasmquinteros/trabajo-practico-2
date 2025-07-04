@@ -97,7 +97,6 @@ const eventListeners = () => {
           location.name.toLowerCase().includes(searchValue.toLowerCase())
       );
       viewLocation.renderLocations(filteredLocations);
-      console.log(filteredLocations);
     }
   };
 
