@@ -9,11 +9,18 @@ import { renderLocations } from "../view/locations.view.js";
 import "../../styles/locations.css";
 import state from "../store/state.js";
 
-// Obtiene todas las ubicaciones de la API
-const locations = await getLocations();
-state.locations = locations;
-// Renderiza las ubicaciones en la interfaz
-renderLocations(state.locations);
+try{
+    state.utils.showLoader();
+    // Obtiene todas las ubicaciones de la API
+    const locations = await getLocations();
+    state.locations = locations;
+    // Renderiza las ubicaciones en la interfaz
+    renderLocations(state.locations);
+    // Inicializa la página creando el encabezado
+    createHeader();
 
-// Inicializa la página creando el encabezado
-createHeader();
+}catch (err){
+    state.utils.showError(err.message)
+}finally {
+    state.utils.hideLoader()
+}

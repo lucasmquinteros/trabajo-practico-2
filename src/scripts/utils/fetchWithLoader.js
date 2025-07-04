@@ -28,10 +28,4 @@ window.fetch = async function (...args) {
   }
 };
 
-/**
- * Configura el interceptor de fetch. Esta función se llama al iniciar la aplicación.
- * El reemplazo de fetch se realiza automáticamente al importar este módulo.
- */
-export default function setupFetchInterceptor() {
-  console.log("Fetch interceptor configurado");
-}
+

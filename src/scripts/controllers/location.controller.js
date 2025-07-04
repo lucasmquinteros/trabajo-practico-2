@@ -10,6 +10,7 @@ import "/src/styles/style.css"
 import "/src/styles/location.css"
 import {getCharactersInEpisode} from "../models/episode.model.js";
 import {renderCharacters} from "../view/character.view.js";
+import state from "../store/state.js";
 
 /**
  * Inicializa la página de detalle de ubicación cuando el DOM está completamente cargado
@@ -21,10 +22,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!id) {
         window.history.back();
     }
-    createHeader()
-    const location = await getLocationById(id)
-    renderLocation(location)
-    const charactersResidents = await getCharactersInEpisode(location.residents)
-    renderCharacters(charactersResidents)
+    try {
+        state.utils.showLoader()
+        createHeader()
+        const location = await getLocationById(id)
+        renderLocation(location)
+        const charactersResidents = await getCharactersInEpisode(location.residents)
+        renderCharacters(charactersResidents)
+    }catch (err){
+        state.utils.showError(err.message)
+    }finally {
+        state.utils.hideLoader()
+    }
 });
 
