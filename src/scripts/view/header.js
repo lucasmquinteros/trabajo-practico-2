@@ -111,7 +111,7 @@ const eventListeners = () => {
     await handleSearch();
   });
 
-  if (path === "characters" || path === "") {
+  if (path === "characters" || path === "" || path === "character") {
     input.placeholder = "🔍  Search Character";
   } else if (path === "episodes" || path === "episode") {
     input.placeholder = "🔍  Search Episode";
