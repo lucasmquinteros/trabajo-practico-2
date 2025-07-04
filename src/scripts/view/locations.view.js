@@ -8,15 +8,21 @@
  */
 export const renderLocations = (locations) => {
     const container = document.getElementById("locations-container");
+    container.innerHTML = ""; // 🧽 Limpiar antes de agregar nuevas localizaciones
+
     locations.forEach(location => {
-    const containerLocation = document.createElement("div");
-    containerLocation.className = "location";
-    containerLocation.innerHTML = `<div  data-label="Name"><a href="/location?id=${location.id}">${location.name}</a></div>
-                    <div  data-label="Name">${location.type}</div>
-                    <div  data-label="Name">${location.dimension ? location.dimension : "unknown"}</div>`
+        const containerLocation = document.createElement("div");
+        containerLocation.className = "location";
+        containerLocation.innerHTML = `
+            <div data-label="Name">
+                <a href="/location?id=${location.id}">${location.name}</a>
+            </div>
+            <div data-label="Type">${location.type}</div>
+            <div data-label="Dimension">${location.dimension ? location.dimension : "unknown"}</div>
+        `;
         container.appendChild(containerLocation);
-    })
-}
+    });
+};
 
 /**
  * Renderiza los detalles de una ubicación específica en la página de detalle
